@@ -55,6 +55,7 @@ public class Interface
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
         shell.setImage(new Image(display, dirURL.getPath()));
         shell.setText("BioFeedBack study");
+
         GridLayout gridLayout = new GridLayout();
         gridLayout.numColumns = 3;
         shell.setLayout(gridLayout);
