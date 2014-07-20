@@ -51,6 +51,7 @@ public class Interface
 
     public Shell createShell(final Display display)
     {
+        /*hello from bobby*/
         final Shell shell = new Shell(display);
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
         shell.setImage(new Image(display, dirURL.getPath()));
