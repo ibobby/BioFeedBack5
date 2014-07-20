@@ -59,7 +59,7 @@ public class Interface
         gridLayout.numColumns = 3;
         shell.setLayout(gridLayout);
 
-        new Label(shell, SWT.NONE).setText("Dog's Name:");
+        new Label(shell, SWT.NONE).setText("Patient's Name:");
 
         dogName = new Text(shell, SWT.SINGLE | SWT.BORDER);
         GridData gridData = new GridData(GridData.FILL, GridData.CENTER, true, false);
