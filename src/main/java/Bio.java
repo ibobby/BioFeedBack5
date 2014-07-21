@@ -17,6 +17,7 @@ public class Bio {
     private final Label status;
 
     public Bio() {
+
         Display display = new Display();
         final Shell shell = new Shell(display);
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
@@ -72,6 +73,12 @@ public class Bio {
         labelData.right = new FormAttachment(100);
         labelData.bottom = new FormAttachment(100);
         status.setLayoutData(labelData);
+
+        //push button
+        Button pushButton = new Button(shell, SWT.PUSH);
+        pushButton.setLocation(50, 50);
+        pushButton.setText("Im a Push Button");
+        pushButton.pack();
 
         //shell.pack();
         shell.open();
