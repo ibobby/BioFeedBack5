@@ -2,10 +2,15 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
+import org.mihalis.opal.*;
+import org.mihalis.opal.angles.AngleSlider;
+import org.mihalis.opal.multiChoice.MultiChoice;
+import org.mihalis.opal.systemMonitor.SystemMonitor;
+import org.mihalis.opal.systemMonitor.SampleIdentifier;
+import java.util.Random;
 
 import java.net.URL;
 
@@ -14,7 +19,9 @@ import java.net.URL;
  */
 public class Bio {
 
-    private final Label status;
+    //private final Label status;
+    private Scale scale;
+    private Text value;
 
     public Bio() {
 
@@ -23,6 +30,7 @@ public class Bio {
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
         shell.setImage(new Image(display, dirURL.getPath()));
         shell.setText("BioFeedBack study");
+        shell.setLayout(new GridLayout(3, false));
 
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
@@ -62,7 +70,7 @@ public class Bio {
             }
         });
 
-        status = new Label(shell, SWT.BORDER);
+        /*status = new Label(shell, SWT.BORDER);
         status.setText("Ready");
         FormLayout layout;
         layout = new FormLayout();
@@ -74,22 +82,36 @@ public class Bio {
         labelData.bottom = new FormAttachment(100);
         status.setLayoutData(labelData);
 
-        //push button
-        Button pushButton = new Button(shell, SWT.PUSH);
-        pushButton.setLocation(50, 50);
-        pushButton.setText("Im a Push Button");
-        pushButton.pack();
+        final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
+        //angleSlider.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));*/
+
+        final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
+        custom.addSample("custom", new RandomSample());
+        custom.setCaption("custom", "Random value:");
+        custom.setColor("custom", new RGB(255, 255, 216));
+        custom.setFormatPattern("custom", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
+        custom.setLayoutData(createLayoutData());
 
         //shell.pack();
         shell.open();
-
-
 
         while (!shell.isDisposed())
         {
             if (!display.readAndDispatch())
                 display.sleep();
         }
+
+
+    }
+
+    /**
+     * @return a layout data
+     */
+    private static GridData createLayoutData() {
+        final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
+        gd.widthHint = 500;
+        gd.heightHint = 400;
+        return gd;
     }
 
 }
