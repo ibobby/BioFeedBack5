@@ -19,7 +19,7 @@ import java.net.URL;
  */
 public class Bio {
 
-    //private final Label status;
+    private final Label status;
     private Scale scale;
     private Text value;
 
@@ -30,7 +30,7 @@ public class Bio {
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
         shell.setImage(new Image(display, dirURL.getPath()));
         shell.setText("BioFeedBack study");
-        shell.setLayout(new GridLayout(3, false));
+        shell.setLayout(new GridLayout(1, false));
 
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
@@ -70,27 +70,31 @@ public class Bio {
             }
         });
 
-        /*status = new Label(shell, SWT.BORDER);
-        status.setText("Ready");
-        FormLayout layout;
-        layout = new FormLayout();
-        shell.setLayout(layout);
+        //FormLayout layout;
+        /*layout = new FormLayout();
+        shell.setLayout(layout);*/
 
-        FormData labelData = new FormData();
+        /*FormData labelData = new FormData();
         labelData.left = new FormAttachment(0);
         labelData.right = new FormAttachment(100);
         labelData.bottom = new FormAttachment(100);
-        status.setLayoutData(labelData);
+        status.setLayoutData(labelData);*/
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
-        //angleSlider.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));*/
+        angleSlider.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));
 
         final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
         custom.addSample("custom", new RandomSample());
         custom.setCaption("custom", "Random value:");
         custom.setColor("custom", new RGB(255, 255, 216));
         custom.setFormatPattern("custom", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-        custom.setLayoutData(createLayoutData());
+        custom.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+        status = new Label(shell, SWT.BORDER);
+        status.setText("Ready");
+        //gridData = new GridData(GridData.FILL_HORIZONTAL, GridData.END, true, true);
+        //gridData.horizontalSpan = 1;
+        status.setLayoutData(new GridData(SWT.LEFT, SWT.END, false, false));
 
         //shell.pack();
         shell.open();
