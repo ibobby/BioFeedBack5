@@ -75,9 +75,15 @@ public class Bio {
 
         final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
         custom.addSample("custom", new RandomSample());
-        custom.setCaption("custom", "Random value:");
+        custom.setCaption("custom", "Mesured value:");
         custom.setColor("custom", new RGB(255, 255, 216));
         custom.setFormatPattern("custom", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
+
+        custom.addSample("const", new ConstSample());
+        custom.setCaption("const", "Treshhold value:");
+        custom.setColor("const", new RGB(255, 55, 105));
+        custom.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
+
         custom.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
         status = new Label(shell, SWT.BORDER);
