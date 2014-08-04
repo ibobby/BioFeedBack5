@@ -16,7 +16,7 @@ import java.util.Random;
 
         @Override
         public double getMaxValue() {
-            return 99d;
+            return 100d;
         }
 
     }
