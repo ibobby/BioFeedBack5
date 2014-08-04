@@ -70,16 +70,6 @@ public class Bio {
             }
         });
 
-        //FormLayout layout;
-        /*layout = new FormLayout();
-        shell.setLayout(layout);*/
-
-        /*FormData labelData = new FormData();
-        labelData.left = new FormAttachment(0);
-        labelData.right = new FormAttachment(100);
-        labelData.bottom = new FormAttachment(100);
-        status.setLayoutData(labelData);*/
-
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
         angleSlider.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));
 
@@ -92,9 +82,7 @@ public class Bio {
 
         status = new Label(shell, SWT.BORDER);
         status.setText("Ready");
-        //gridData = new GridData(GridData.FILL_HORIZONTAL, GridData.END, true, true);
-        //gridData.horizontalSpan = 1;
-        status.setLayoutData(new GridData(SWT.LEFT, SWT.END, false, false));
+        status.setLayoutData(new GridData(SWT.FILL, SWT.END, false, false));
 
         //shell.pack();
         shell.open();
@@ -104,8 +92,6 @@ public class Bio {
             if (!display.readAndDispatch())
                 display.sleep();
         }
-
-
     }
 
     /**
