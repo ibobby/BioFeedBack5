@@ -71,7 +71,7 @@ public class Bio {
         });
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
-        angleSlider.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));
+        angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
 
         final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
         custom.addSample("custom", new RandomSample());
