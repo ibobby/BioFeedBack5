@@ -8,6 +8,8 @@ import org.eclipse.swt.widgets.*;
 import org.mihalis.opal.*;
 import org.mihalis.opal.angles.AngleSlider;
 import org.mihalis.opal.multiChoice.MultiChoice;
+import org.mihalis.opal.notify.Notifier;
+import org.mihalis.opal.notify.NotifierColorsFactory;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
 import org.mihalis.opal.systemMonitor.SampleIdentifier;
 import java.util.Random;
@@ -57,7 +59,9 @@ public class Bio {
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-                System.out.println("checked");
+                /*NotifierClass notifier = new NotifierClass();
+                new Thread(notifier).start();*/
+                Notifier.notify("New Mail message", "Test message ...");
             }
         });
 
