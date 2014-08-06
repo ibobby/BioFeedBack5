@@ -59,9 +59,10 @@ public class Bio {
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-                /*NotifierClass notifier = new NotifierClass();
+               /* NotifierClass notifier = new NotifierClass();
                 new Thread(notifier).start();*/
-                Notifier.notify("New Mail message", "Test message ...");
+                //Notifier.notify("New Mail message", "Test message ...");
+                //http://hexapixel.com/2009/06/30/creating-a-notification-popup-widget
             }
         });
 
