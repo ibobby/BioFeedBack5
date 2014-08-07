@@ -14,6 +14,7 @@ import org.mihalis.opal.notify.Notifier;
 import org.mihalis.opal.notify.NotifierColorsFactory;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
 import org.mihalis.opal.systemMonitor.SampleIdentifier;
+import org.mihalis.opal.utils.SimpleSelectionAdapter;
 
 import java.util.Random;
 
@@ -62,9 +63,7 @@ public class Bio {
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-
                 Notifier.notify("New message", "from bobby (bobby@...)<br/><br/>Test message ...");
-                //http://hexapixel.com/2009/06/30/creating-a-notification-popup-widget
             }
         });
 
@@ -79,6 +78,15 @@ public class Bio {
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
         angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
+        final Text text = new Text(shell, SWT.READ_ONLY | SWT.BORDER);
+        text.setText("0   ");
+        text.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
+        angleSlider.addSelectionListener(new SimpleSelectionAdapter() {
+            @Override
+            public void handle(final SelectionEvent e) {
+                text.setText("" + (int) (angleSlider.getSelection()/3.6));
+            }
+        });
 
         final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
         custom.addSample("custom", new RandomSample());
