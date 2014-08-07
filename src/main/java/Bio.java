@@ -1,8 +1,10 @@
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
 import org.mihalis.opal.*;
@@ -12,6 +14,7 @@ import org.mihalis.opal.notify.Notifier;
 import org.mihalis.opal.notify.NotifierColorsFactory;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
 import org.mihalis.opal.systemMonitor.SampleIdentifier;
+
 import java.util.Random;
 
 import java.net.URL;
@@ -59,9 +62,8 @@ public class Bio {
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-               /* NotifierClass notifier = new NotifierClass();
-                new Thread(notifier).start();*/
-                //Notifier.notify("New Mail message", "Test message ...");
+
+                Notifier.notify("New Mail message", "Laurent CARON (lcaron@...)<br/><br/>Test message ...");
                 //http://hexapixel.com/2009/06/30/creating-a-notification-popup-widget
             }
         });
@@ -98,8 +100,7 @@ public class Bio {
         //shell.pack();
         shell.open();
 
-        while (!shell.isDisposed())
-        {
+        while (!shell.isDisposed()) {
             if (!display.readAndDispatch())
                 display.sleep();
         }
