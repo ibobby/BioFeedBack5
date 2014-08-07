@@ -63,7 +63,7 @@ public class Bio {
             @Override
             public void handleEvent(Event event) {
 
-                Notifier.notify("New Mail message", "Laurent CARON (lcaron@...)<br/><br/>Test message ...");
+                Notifier.notify("New message", "from bobby (bobby@...)<br/><br/>Test message ...");
                 //http://hexapixel.com/2009/06/30/creating-a-notification-popup-widget
             }
         });

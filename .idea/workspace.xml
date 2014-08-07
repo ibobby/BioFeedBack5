@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66e70a3d-fb0c-46fb-93d4-fd7cd78a3b0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/opal_0_9_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_eclipse_swt_org_eclipse_swt_win32_win32_x86_4_3_swt_org_eclipse_swt_win32_win32_x86_4_3.xml" />
-      <change type="DELETED" beforePath="C:\Users\bobby\IdeaProjects\BioFeedBack\BioFeedBack5\.idea\libraries\Maven__org_eclipse_swt_win32_win32_x86_3_3_0_v3346.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Bio.java" afterPath="$PROJECT_DIR$/src/main/java/Bio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BioFeedBack.iml" afterPath="$PROJECT_DIR$/BioFeedBack.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/NotifierClass.java" afterPath="$PROJECT_DIR$/src/main/java/NotifierClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BioFeedBack.iws" />
@@ -44,8 +39,8 @@
       <file leaf-file-name="Bio.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Bio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4409722" vertical-offset="494" max-vertical-offset="1683">
-              <caret line="65" column="108" selection-start-line="65" selection-start-column="108" selection-end-line="65" selection-end-column="108" />
+            <state vertical-scroll-proportion="0.5885417" vertical-offset="494" max-vertical-offset="1683">
+              <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -564,7 +559,7 @@
       <workItem from="1407263619375" duration="843000" />
       <workItem from="1407352351877" duration="1215000" />
       <workItem from="1407397368060" duration="4255000" />
-      <workItem from="1407410424928" duration="488000" />
+      <workItem from="1407410424928" duration="790000" />
     </task>
     <task id="LOCAL-00001" summary="The Beginning">
       <created>1405863968858</created>
@@ -614,11 +609,15 @@
       <created>1407353361682</created>
       <updated>1407353361682</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Visualization">
+      <created>1407410957582</created>
+      <updated>1407410957582</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44953000" />
+    <option name="totallyTimeSpent" value="45255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
@@ -1077,8 +1076,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Bio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4409722" vertical-offset="494" max-vertical-offset="1683">
-          <caret line="65" column="108" selection-start-line="65" selection-start-column="108" selection-end-line="65" selection-end-column="108" />
+        <state vertical-scroll-proportion="0.5885417" vertical-offset="494" max-vertical-offset="1683">
+          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
           <folding />
         </state>
       </provider>
