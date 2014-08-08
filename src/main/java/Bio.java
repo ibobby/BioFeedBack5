@@ -1,6 +1,5 @@
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.*;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
@@ -14,6 +13,7 @@ import org.mihalis.opal.notify.Notifier;
 import org.mihalis.opal.notify.NotifierColorsFactory;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
 import org.mihalis.opal.systemMonitor.SampleIdentifier;
+import org.mihalis.opal.titledSeparator.TitledSeparator;
 import org.mihalis.opal.utils.SimpleSelectionAdapter;
 
 import java.util.Random;
@@ -78,15 +78,10 @@ public class Bio {
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
         angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
-        final Text text = new Text(shell, SWT.READ_ONLY | SWT.BORDER);
-        text.setText("0   ");
-        text.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
-        angleSlider.addSelectionListener(new SimpleSelectionAdapter() {
-            @Override
-            public void handle(final SelectionEvent e) {
-                text.setText("" + (int) (angleSlider.getSelection()/3.6));
-            }
-        });
+
+        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
+        sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
+        sep1.setText("Parameters");
 
         final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
         custom.addSample("custom", new RandomSample());
@@ -98,8 +93,14 @@ public class Bio {
         custom.setCaption("const", "Treshhold value:");
         custom.setColor("const", new RGB(255, 55, 105));
         custom.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-
         custom.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+        custom.addPaintListener(new PaintListener() {
+            @Override
+            public void paintControl(PaintEvent paintEvent) {
+                System.out.println(paintEvent.count);
+            }
+        });
 
         status = new Label(shell, SWT.BORDER);
         status.setText("Ready");
