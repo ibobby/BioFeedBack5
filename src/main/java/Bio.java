@@ -39,8 +39,8 @@ public class Bio {
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
         final Image image = new Image(display, dirURL.getPath());
         shell.setImage(image);
-        shell.setText("BioFeedBack study");
-        shell.setLayout(new GridLayout(2, true));
+        shell.setText("Биологическая обратная связь");
+        shell.setLayout(new GridLayout(4, true));
 
         shell.addListener(SWT.Close, new Listener() {
             @Override
@@ -90,26 +90,38 @@ public class Bio {
 
         final OButton button1 = new OButton(shell, SWT.PUSH);
         button1.setText("Normal button");
-        final GridData gd = new GridData(GridData.BEGINNING, GridData.CENTER, false, false);
-        gd.widthHint = 200;
-        button1.setLayoutData(gd);
+        GridData gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
+        gridData.horizontalSpan = 2;
+        button1.setLayoutData(gridData);
         button1.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
         final OButton button2 = new OButton(shell, SWT.PUSH);
         button2.setText("Text & image");
         //button2.setImage(icon);
-        button2.setLayoutData(gd);
-        button2.setButtonRenderer(RedButtonRenderer.getInstance());
+        button2.setLayoutData(gridData);
+        button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
+
+        final OButton button3 = new OButton(shell, SWT.PUSH);
+        button3.setText("Text & image");
+        //button2.setImage(icon);
+        button3.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false));
+        button3.setButtonRenderer(DefaultButtonRenderer.getInstance());
+
+        final OButton button4 = new OButton(shell, SWT.PUSH);
+        button4.setText("Text & image");
+        //button2.setImage(icon);
+        button4.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false));
+        button4.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
         angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
 
-        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
-        sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
-        sep1.setText("Parameters");
+//        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
+//        sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
+//        sep1.setText("Parameters");
 
-        //Пример размещения нескольких SystemMonitor в строку и столбец
-        //http://code.google.com/a/eclipselabs.org/p/opal/source/browse/src/test/java/org/mihalis/opal/SystemMonitor/SystemMonitorSnippet.java
+        //Пример размещения объектов
+        //http://smartyit.ru/java/96
 
         respirationGraph = new SystemMonitor(shell, SWT.NONE);
         final RandomSample detectedSignal = new RandomSample(RANDOM_TRESHHOLD);
@@ -129,22 +141,18 @@ public class Bio {
 
         final MasSample heartRate = new MasSample(HEART_RATE_TRESHHOLD);
         heartRythmGraph.addSample("heartRate", heartRate);
-        heartRythmGraph.setCaption("heartRate", "Heart rate:");
+        heartRythmGraph.setCaption("heartRate", "Текущая ЧСС:");
         heartRythmGraph.setColor("heartRate", new RGB(255, 100, 216));
         heartRythmGraph.setFormatPattern("heartRate", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-
-//        final ConstSample treshold2 = new ConstSample(HEART_RATE_TRESHHOLD);
-//        heartRythmGraph.addSample("const", treshold2);
-//        heartRythmGraph.setCaption("const", "Treshhold value:");
-//        heartRythmGraph.setColor("const", new RGB(255, 10, 5));
-//        heartRythmGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-
         heartRythmGraph.setLayoutData(createLayoutData());
 
         status = new Label(shell, SWT.BORDER);
-        status.setText("Ready");
-        status.setLayoutData(new GridData(SWT.FILL, SWT.END, false, false));
+        status.setText("Готово");
+        gridData = new GridData(SWT.FILL, SWT.END, false, false);
+        gridData.horizontalSpan = 4;
+        status.setLayoutData(gridData);
 
+        shell.pack();
         shell.open();
 
         while (!shell.isDisposed()) {
@@ -158,6 +166,8 @@ public class Bio {
      */
     private static GridData createLayoutData() {
         final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
+        gd.verticalSpan = 2;
+        gd.horizontalSpan = 2;
         gd.widthHint = 500;
         gd.heightHint = 400;
         return gd;
