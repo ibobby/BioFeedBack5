@@ -5,7 +5,15 @@ import org.mihalis.opal.systemMonitor.Sample;
  */
 public class ConstSample implements Sample {
 
-    public static final int treshhold = 20;
+    public int treshhold;
+
+    public int getTreshhold() {
+        return treshhold;
+    }
+
+    public ConstSample(int treshhold) {
+        this.treshhold = treshhold;
+    }
 
     @Override
     public double getValue() {
@@ -14,6 +22,6 @@ public class ConstSample implements Sample {
 
     @Override
     public double getMaxValue() {
-        return 40;
+        return 120;
     }
 }

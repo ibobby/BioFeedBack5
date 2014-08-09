@@ -26,6 +26,8 @@ public class Bio {
     private Text value;
     public static SystemMonitor respirationGraph;
     public static SystemMonitor heartRythmGraph;
+    private final static int RANDOM_TRESHHOLD = 60;
+    private final static int HEART_RATE_TRESHHOLD = 80;
 
     public Bio() {
 
@@ -90,15 +92,18 @@ public class Bio {
         sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
         sep1.setText("Parameters");
 
+        //Пример размещения нескольких SystemMonitor в строку и столбец
+        //http://code.google.com/a/eclipselabs.org/p/opal/source/browse/src/test/java/org/mihalis/opal/SystemMonitor/SystemMonitorSnippet.java
+
         respirationGraph = new SystemMonitor(shell, SWT.NONE);
-        final RandomSample detectedSignal = new RandomSample();
+        final RandomSample detectedSignal = new RandomSample(RANDOM_TRESHHOLD);
         respirationGraph.addSample("respirationGraph", detectedSignal);
         respirationGraph.setCaption("respirationGraph", "Mesured value:");
         respirationGraph.setColor("respirationGraph", new RGB(255, 255, 216));
         respirationGraph.setFormatPattern("respirationGraph", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
 
-        final ConstSample treshold = new ConstSample();
-        respirationGraph.addSample("const", treshold);
+        final ConstSample treshold1 = new ConstSample(RANDOM_TRESHHOLD);
+        respirationGraph.addSample("const", treshold1);
         respirationGraph.setCaption("const", "Treshhold value:");
         respirationGraph.setColor("const", new RGB(255, 55, 105));
         respirationGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
@@ -106,13 +111,19 @@ public class Bio {
 
         heartRythmGraph = new SystemMonitor(shell, SWT.NONE);
 
-        final ConstSample hearttreshold = new ConstSample();
-        heartRythmGraph.addSample("const", treshold);
-        heartRythmGraph.setCaption("const", "Treshhold value:");
-        heartRythmGraph.setColor("const", new RGB(255, 55, 105));
-        heartRythmGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-        heartRythmGraph.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        final MasSample heartRate = new MasSample(HEART_RATE_TRESHHOLD);
+        heartRythmGraph.addSample("heartRate", heartRate);
+        heartRythmGraph.setCaption("heartRate", "Heart rate:");
+        heartRythmGraph.setColor("heartRate", new RGB(255, 100, 216));
+        heartRythmGraph.setFormatPattern("heartRate", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
 
+//        final ConstSample treshold2 = new ConstSample(HEART_RATE_TRESHHOLD);
+//        heartRythmGraph.addSample("const", treshold2);
+//        heartRythmGraph.setCaption("const", "Treshhold value:");
+//        heartRythmGraph.setColor("const", new RGB(255, 10, 5));
+//        heartRythmGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
+
+        heartRythmGraph.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
         status = new Label(shell, SWT.BORDER);
         status.setText("Ready");
