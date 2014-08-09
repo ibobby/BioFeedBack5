@@ -1,3 +1,4 @@
+import org.eclipse.swt.graphics.RGB;
 import org.mihalis.opal.systemMonitor.Sample;
 
 import java.util.Random;
@@ -11,7 +12,15 @@ import java.util.Random;
 
         @Override
         public double getValue() {
-            return new Random().nextInt(100);
+            int newValue = new Random().nextInt(100);
+
+            if (newValue > ConstSample.treshhold) {
+                Bio.custom.setColor("const", new RGB(0, 255, 50));
+            } else {
+                Bio.custom.setColor("const", new RGB(255, 0, 0));
+            }
+
+            return newValue;
         }
 
         @Override

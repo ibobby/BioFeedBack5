@@ -28,6 +28,7 @@ public class Bio {
     private final Label status;
     private Scale scale;
     private Text value;
+    public static SystemMonitor custom;
 
     public Bio() {
 
@@ -83,13 +84,15 @@ public class Bio {
         sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
         sep1.setText("Parameters");
 
-        final SystemMonitor custom = new SystemMonitor(shell, SWT.NONE);
-        custom.addSample("custom", new RandomSample());
+        custom = new SystemMonitor(shell, SWT.NONE);
+        final RandomSample detectedSignal = new RandomSample();
+        custom.addSample("custom", detectedSignal);
         custom.setCaption("custom", "Mesured value:");
         custom.setColor("custom", new RGB(255, 255, 216));
         custom.setFormatPattern("custom", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
 
-        custom.addSample("const", new ConstSample());
+        final ConstSample treshold = new ConstSample();
+        custom.addSample("const", treshold);
         custom.setCaption("const", "Treshhold value:");
         custom.setColor("const", new RGB(255, 55, 105));
         custom.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
@@ -98,7 +101,7 @@ public class Bio {
         custom.addPaintListener(new PaintListener() {
             @Override
             public void paintControl(PaintEvent paintEvent) {
-                System.out.println(paintEvent.count);
+
             }
         });
 
