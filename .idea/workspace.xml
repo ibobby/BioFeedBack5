@@ -42,14 +42,13 @@
       <file leaf-file-name="Bio.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Bio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28956625" vertical-offset="1198" max-vertical-offset="4420">
-              <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.16156463" vertical-offset="942" max-vertical-offset="3383">
+              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
               <folding>
-                <element signature="e#4269#4277#0" expanded="true" />
-                <element signature="e#7603#8247#0" expanded="true" />
-                <element signature="e#8235#8236#0" expanded="true" />
-                <element signature="e#8573#9369#0" expanded="true" />
-                <element signature="e#9357#9358#0" expanded="true" />
+                <element signature="e#4095#4103#0" expanded="true" />
+                <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+                <element signature="e#8372#9150#0" expanded="true" />
+                <element signature="e#9139#9140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -532,7 +531,7 @@
       <workItem from="1408896082761" duration="1022000" />
       <workItem from="1408990397281" duration="1751000" />
       <workItem from="1408992185774" duration="639000" />
-      <workItem from="1407594450062" duration="15090000" />
+      <workItem from="1407594450062" duration="17314000" />
     </task>
     <task id="LOCAL-00001" summary="The Beginning">
       <created>1405863968858</created>
@@ -626,11 +625,15 @@
       <created>1407639921725</created>
       <updated>1407639921725</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Visualization">
+      <created>1407642205440</created>
+      <updated>1407642205440</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98019000" />
+    <option name="totallyTimeSpent" value="100243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -656,7 +659,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20859376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3116592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3116592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -699,11 +702,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2023">
           <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,11 +744,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1751">
           <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -785,11 +786,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1921">
           <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,11 +818,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2159">
           <caret line="96" column="73" selection-start-line="96" selection-start-column="73" selection-end-line="96" selection-end-column="73" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -851,11 +850,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1683">
           <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,11 +874,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -901,11 +898,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1615">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1150,14 +1146,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Bio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28956625" vertical-offset="1198" max-vertical-offset="4420">
-          <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.16156463" vertical-offset="942" max-vertical-offset="3383">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding>
-            <element signature="e#4269#4277#0" expanded="true" />
-            <element signature="e#7603#8247#0" expanded="true" />
-            <element signature="e#8235#8236#0" expanded="true" />
-            <element signature="e#8573#9369#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
+            <element signature="e#4095#4103#0" expanded="true" />
+            <element signature="method#drawLabel#0;class#Bio#0" expanded="false" />
+            <element signature="e#8372#9150#0" expanded="true" />
+            <element signature="e#9139#9140#0" expanded="true" />
           </folding>
         </state>
       </provider>

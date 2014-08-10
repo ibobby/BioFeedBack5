@@ -40,7 +40,7 @@ public class Bio {
         final Image image = new Image(display, dirURL.getPath());
         shell.setImage(image);
         shell.setText("Биологическая обратная связь");
-        shell.setLayout(new GridLayout(32, true));
+        shell.setLayout(new GridLayout(4, true));
 
         shell.addListener(SWT.Close, new Listener() {
             @Override
@@ -100,21 +100,20 @@ public class Bio {
 
         final OButton button2 = new OButton(shell, SWT.PUSH);
         button2.setText("Выбор");
-        //button2.setImage(icon);
+        //button2.setImage(image);
         gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
-        gridData.horizontalSpan = 2;
+        gridData.horizontalSpan = 1;
         button2.setLayoutData(gridData);
         //button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
-        final String[] euroZone = new String[] { "ЭКГ", "ЭЭГ", "Температура", "Estonia", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain" };
+        final String[] euroZone = new String[]{"ЭКГ", "ЭЭГ"};
         drawLabel(shell, "Simple Multichoice :");
         final MultiChoice<String> mcSimple = new MultiChoice<String>(shell, SWT.READ_ONLY);
         final GridData gridData1 = new GridData(GridData.FILL, GridData.BEGINNING, true, true);
         gridData.widthHint = 200;
-        mcSimple.setLayoutData(gridData);
+        mcSimple.setLayoutData(gridData1);
         mcSimple.addAll(euroZone);
-        addButons(mcSimple);
-
+        //addButons(mcSimple);
 
 
 //        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
@@ -168,7 +167,7 @@ public class Bio {
     private static GridData createLayoutData() {
         final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
         gd.verticalSpan = 1;
-        gd.horizontalSpan = 32;
+        gd.horizontalSpan = 2;
 //        gd.widthHint = 250;
 //        gd.heightHint = 400;
         return gd;
@@ -177,107 +176,57 @@ public class Bio {
     private static void drawLabel(final Shell shell, final String text) {
 
         final Label label = new Label(shell, SWT.NONE);
-
         label.setText(text);
-
         label.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
 
     }
 
-
-
     private static void addButons(final MultiChoice<?> mc) {
-
         final Button buttonShowSelection = new Button(mc.getParent(), SWT.PUSH);
-
         buttonShowSelection.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
-
         buttonShowSelection.setText("Show selection");
-
         buttonShowSelection.addSelectionListener(new SimpleSelectionAdapter() {
-
-
-
             @Override
-
             public void handle(final SelectionEvent e) {
-
                 final Iterator<?> it = mc.getSelection().iterator();
-
                 final StringBuilder sb = new StringBuilder();
-
                 while (it.hasNext()) {
-
                     sb.append(it.next().toString());
-
                     if (it.hasNext()) {
-
                         sb.append(", ");
-
                     }
-
                 }
 
                 final MessageBox mb = new MessageBox(mc.getShell(), SWT.OK);
-
                 mb.setMessage(sb.toString());
-
                 mb.open();
-
             }
 
         });
-
-
 
         final Button buttonShowSelectedIndex = new Button(mc.getParent(), SWT.PUSH);
-
         buttonShowSelectedIndex.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
-
         buttonShowSelectedIndex.setText("Show selected index");
-
         buttonShowSelectedIndex.addSelectionListener(new SimpleSelectionAdapter() {
 
-
-
             @Override
-
             public void handle(final SelectionEvent e) {
-
                 final StringBuilder sb = new StringBuilder();
-
                 final int[] selectedIndex = mc.getSelectedIndex();
-
                 if (selectedIndex.length > 0) {
-
                     sb.append(selectedIndex[0]);
-
                     for (int i = 1; i < selectedIndex.length; i++) {
-
                         sb.append(",");
-
                         sb.append(selectedIndex[i]);
-
                     }
-
                 } else {
-
                     sb.append("Empty");
-
                 }
 
                 final MessageBox mb = new MessageBox(mc.getShell(), SWT.OK);
-
                 mb.setMessage(sb.toString());
-
                 mb.open();
-
             }
-
         });
-
     }
-
-
-
 }
