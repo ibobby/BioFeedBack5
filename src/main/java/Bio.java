@@ -9,12 +9,15 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
+import org.mihalis.opal.multiChoice.MultiChoice;
 import org.mihalis.opal.notify.Notifier;
 import org.mihalis.opal.obutton.DefaultButtonRenderer;
 import org.mihalis.opal.obutton.OButton;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
+import org.mihalis.opal.utils.SimpleSelectionAdapter;
 
 import java.net.URL;
+import java.util.Iterator;
 
 /**
  * Created by WhiteMountiens on 20.07.2014.
@@ -91,7 +94,7 @@ public class Bio {
         final OButton button1 = new OButton(shell, SWT.PUSH);
         button1.setText("Старт");
         GridData gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false);
-        gridData.horizontalSpan = 2;
+        gridData.horizontalSpan = 1;
         button1.setLayoutData(gridData);
         button1.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
@@ -99,9 +102,20 @@ public class Bio {
         button2.setText("Выбор");
         //button2.setImage(icon);
         gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
-        gridData.horizontalSpan = 15;
+        gridData.horizontalSpan = 2;
         button2.setLayoutData(gridData);
-        button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
+        //button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
+
+        final String[] euroZone = new String[] { "ЭКГ", "ЭЭГ", "Температура", "Estonia", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Malta", "Netherlands", "Portugal", "Slovakia", "Slovenia", "Spain" };
+        drawLabel(shell, "Simple Multichoice :");
+        final MultiChoice<String> mcSimple = new MultiChoice<String>(shell, SWT.READ_ONLY);
+        final GridData gridData1 = new GridData(GridData.FILL, GridData.BEGINNING, true, true);
+        gridData.widthHint = 200;
+        mcSimple.setLayoutData(gridData);
+        mcSimple.addAll(euroZone);
+        addButons(mcSimple);
+
+
 
 //        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
 //        sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
@@ -155,9 +169,115 @@ public class Bio {
         final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
         gd.verticalSpan = 1;
         gd.horizontalSpan = 32;
-        gd.widthHint = 250;
-        gd.heightHint = 400;
+//        gd.widthHint = 250;
+//        gd.heightHint = 400;
         return gd;
     }
+
+    private static void drawLabel(final Shell shell, final String text) {
+
+        final Label label = new Label(shell, SWT.NONE);
+
+        label.setText(text);
+
+        label.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
+
+    }
+
+
+
+    private static void addButons(final MultiChoice<?> mc) {
+
+        final Button buttonShowSelection = new Button(mc.getParent(), SWT.PUSH);
+
+        buttonShowSelection.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
+
+        buttonShowSelection.setText("Show selection");
+
+        buttonShowSelection.addSelectionListener(new SimpleSelectionAdapter() {
+
+
+
+            @Override
+
+            public void handle(final SelectionEvent e) {
+
+                final Iterator<?> it = mc.getSelection().iterator();
+
+                final StringBuilder sb = new StringBuilder();
+
+                while (it.hasNext()) {
+
+                    sb.append(it.next().toString());
+
+                    if (it.hasNext()) {
+
+                        sb.append(", ");
+
+                    }
+
+                }
+
+                final MessageBox mb = new MessageBox(mc.getShell(), SWT.OK);
+
+                mb.setMessage(sb.toString());
+
+                mb.open();
+
+            }
+
+        });
+
+
+
+        final Button buttonShowSelectedIndex = new Button(mc.getParent(), SWT.PUSH);
+
+        buttonShowSelectedIndex.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false));
+
+        buttonShowSelectedIndex.setText("Show selected index");
+
+        buttonShowSelectedIndex.addSelectionListener(new SimpleSelectionAdapter() {
+
+
+
+            @Override
+
+            public void handle(final SelectionEvent e) {
+
+                final StringBuilder sb = new StringBuilder();
+
+                final int[] selectedIndex = mc.getSelectedIndex();
+
+                if (selectedIndex.length > 0) {
+
+                    sb.append(selectedIndex[0]);
+
+                    for (int i = 1; i < selectedIndex.length; i++) {
+
+                        sb.append(",");
+
+                        sb.append(selectedIndex[i]);
+
+                    }
+
+                } else {
+
+                    sb.append("Empty");
+
+                }
+
+                final MessageBox mb = new MessageBox(mc.getShell(), SWT.OK);
+
+                mb.setMessage(sb.toString());
+
+                mb.open();
+
+            }
+
+        });
+
+    }
+
+
 
 }
