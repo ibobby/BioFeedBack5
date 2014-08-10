@@ -9,13 +9,10 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.mihalis.opal.angles.AngleSlider;
 import org.mihalis.opal.notify.Notifier;
 import org.mihalis.opal.obutton.DefaultButtonRenderer;
 import org.mihalis.opal.obutton.OButton;
-import org.mihalis.opal.obutton.RedButtonRenderer;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
-import org.mihalis.opal.titledSeparator.TitledSeparator;
 
 import java.net.URL;
 
@@ -40,7 +37,7 @@ public class Bio {
         final Image image = new Image(display, dirURL.getPath());
         shell.setImage(image);
         shell.setText("Биологическая обратная связь");
-        shell.setLayout(new GridLayout(4, true));
+        shell.setLayout(new GridLayout(32, true));
 
         shell.addListener(SWT.Close, new Listener() {
             @Override
@@ -54,23 +51,23 @@ public class Bio {
         shell.setMenuBar(menuBar);
 
         MenuItem cascadeFileMenu = new MenuItem(menuBar, SWT.CASCADE);
-        cascadeFileMenu.setText("&File");
+        cascadeFileMenu.setText("&Файл");
 
         Menu fileMenu = new Menu(shell, SWT.DROP_DOWN);
         cascadeFileMenu.setMenu(fileMenu);
 
         MenuItem exitItem = new MenuItem(fileMenu, SWT.PUSH);
-        exitItem.setText("&Exit");
+        exitItem.setText("&Выход");
 
         MenuItem cascadeViewMenu = new MenuItem(menuBar, SWT.CASCADE);
-        cascadeViewMenu.setText("&View");
+        cascadeViewMenu.setText("&Вид");
 
         Menu viewMenu = new Menu(shell, SWT.DROP_DOWN);
         cascadeViewMenu.setMenu(viewMenu);
 
         MenuItem statItem = new MenuItem(viewMenu, SWT.CHECK);
         statItem.setSelection(true);
-        statItem.setText("&View Statusbar");
+        statItem.setText("&Показать статус");
 
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
@@ -88,33 +85,23 @@ public class Bio {
             }
         });
 
+//        final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
+//        angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
+
         final OButton button1 = new OButton(shell, SWT.PUSH);
-        button1.setText("Normal button");
-        GridData gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
+        button1.setText("Старт");
+        GridData gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false);
         gridData.horizontalSpan = 2;
         button1.setLayoutData(gridData);
         button1.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
         final OButton button2 = new OButton(shell, SWT.PUSH);
-        button2.setText("Text & image");
+        button2.setText("Выбор");
         //button2.setImage(icon);
+        gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
+        gridData.horizontalSpan = 15;
         button2.setLayoutData(gridData);
         button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
-
-        final OButton button3 = new OButton(shell, SWT.PUSH);
-        button3.setText("Text & image");
-        //button2.setImage(icon);
-        button3.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false));
-        button3.setButtonRenderer(DefaultButtonRenderer.getInstance());
-
-        final OButton button4 = new OButton(shell, SWT.PUSH);
-        button4.setText("Text & image");
-        //button2.setImage(icon);
-        button4.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false));
-        button4.setButtonRenderer(DefaultButtonRenderer.getInstance());
-
-        final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
-        angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
 
 //        final TitledSeparator sep1 = new TitledSeparator(shell, SWT.NONE);
 //        sep1.setLayoutData(new GridData(GridData.FILL, GridData.FILL, false, false));
@@ -149,7 +136,7 @@ public class Bio {
         status = new Label(shell, SWT.BORDER);
         status.setText("Готово");
         gridData = new GridData(SWT.FILL, SWT.END, false, false);
-        gridData.horizontalSpan = 4;
+        gridData.horizontalSpan = 32;
         status.setLayoutData(gridData);
 
         shell.pack();
@@ -166,9 +153,9 @@ public class Bio {
      */
     private static GridData createLayoutData() {
         final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
-        gd.verticalSpan = 2;
-        gd.horizontalSpan = 2;
-        gd.widthHint = 500;
+        gd.verticalSpan = 1;
+        gd.horizontalSpan = 32;
+        gd.widthHint = 250;
         gd.heightHint = 400;
         return gd;
     }

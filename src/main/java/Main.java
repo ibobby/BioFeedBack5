@@ -4,8 +4,6 @@
 public class Main {
 
     public static void main(String[] args) {
-        Bio bioInt = new Bio();
-        //ршшшш
-
+         Bio bioInt = new Bio();
     }
 }
