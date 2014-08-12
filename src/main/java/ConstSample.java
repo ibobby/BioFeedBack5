@@ -14,6 +14,6 @@ public class ConstSample implements Sample {
 
     @Override
     public double getMaxValue() {
-        return 100;
+        return 40;
     }
 }

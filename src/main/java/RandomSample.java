@@ -12,7 +12,7 @@ import java.util.Random;
 
         @Override
         public double getValue() {
-            int newValue = new Random().nextInt(100);
+            int newValue = (int) (ConstSample.treshhold + Math.pow(-1, (int)System.nanoTime()) * new Random().nextInt(5));
 
             if (newValue > ConstSample.treshhold) {
                 Bio.custom.setColor("const", new RGB(0, 255, 50));
@@ -25,7 +25,7 @@ import java.util.Random;
 
         @Override
         public double getMaxValue() {
-            return 100d;
+            return 40d;
         }
 
     }
