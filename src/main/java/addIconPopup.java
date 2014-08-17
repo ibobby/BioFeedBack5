@@ -49,17 +49,26 @@ public class addIconPopup {
                 }
             });
             final Menu menu = new Menu(shell, SWT.POP_UP);
-            for (int i = 0; i < 8; i++) {
-                MenuItem mi = new MenuItem(menu, SWT.PUSH);
-                mi.setText("Item" + i);
-                mi.addListener(SWT.Selection, new Listener() {
-                    public void handleEvent(Event event) {
-                        System.out.println("selection " + event.widget);
-                    }
-                });
-                if (i == 0)
-                    menu.setDefaultItem(mi);
-            }
+
+            MenuItem miOpen = new MenuItem(menu, SWT.PUSH);
+            miOpen.setText("Open BioFeedBack");
+            miOpen.addListener(SWT.Selection, new Listener() {
+                public void handleEvent(Event event) {
+                    mainShell.setVisible(true);
+                    item.dispose();
+                }
+            });
+            menu.setDefaultItem(miOpen);
+
+            MenuItem miExit = new MenuItem(menu, SWT.PUSH);
+            miExit.setText("Exit");
+            miExit.addListener(SWT.Selection, new Listener() {
+                public void handleEvent(Event event) {
+                    shell.dispose();
+                }
+            });
+
+
             item.addListener(SWT.MenuDetect, new Listener() {
                 public void handleEvent(Event event) {
                     menu.setVisible(true);
@@ -67,8 +76,7 @@ public class addIconPopup {
             });
             item.setImage(image);
         }
-        //  shell.setBounds(50, 50, 300, 200);
-//    shell.open();
+
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch())
                 display.sleep();
