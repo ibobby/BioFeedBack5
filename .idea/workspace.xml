@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66e70a3d-fb0c-46fb-93d4-fd7cd78a3b0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/addIconPopup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Bio.java" afterPath="$PROJECT_DIR$/src/main/java/Bio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BioFeedBack.iws" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26008344" vertical-offset="0" max-vertical-offset="719">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.1418637" vertical-offset="0" max-vertical-offset="719">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -51,8 +48,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addIconPopup.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/addIconPopup.java">
+      <file leaf-file-name="AddIconPopup.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AddIconPopup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
               <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
@@ -685,7 +682,7 @@
       <workItem from="1407578093526" duration="5116000" />
       <workItem from="1407865718793" duration="1763000" />
       <workItem from="1407953111668" duration="649000" />
-      <workItem from="1408270181171" duration="4975000" />
+      <workItem from="1408270181171" duration="5015000" />
     </task>
     <task id="LOCAL-00001" summary="The Beginning">
       <created>1405863968858</created>
@@ -751,11 +748,15 @@
       <created>1407869936356</created>
       <updated>1407869936356</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Visualization">
+      <created>1408280245558</created>
+      <updated>1408280245558</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61075000" />
+    <option name="totallyTimeSpent" value="61115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1223,7 +1224,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/addIconPopup.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AddIconPopup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
           <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
@@ -1247,8 +1248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26008344" vertical-offset="0" max-vertical-offset="719">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.1418637" vertical-offset="0" max-vertical-offset="719">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
