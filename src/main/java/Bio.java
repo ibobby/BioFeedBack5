@@ -1,22 +1,18 @@
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.*;
-import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.*;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
-import org.mihalis.opal.*;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
 import org.mihalis.opal.angles.AngleSlider;
-import org.mihalis.opal.multiChoice.MultiChoice;
 import org.mihalis.opal.notify.Notifier;
-import org.mihalis.opal.notify.NotifierColorsFactory;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
-import org.mihalis.opal.systemMonitor.SampleIdentifier;
 import org.mihalis.opal.titledSeparator.TitledSeparator;
-import org.mihalis.opal.utils.SimpleSelectionAdapter;
-
-import java.util.Random;
 
 import java.net.URL;
 
@@ -25,19 +21,28 @@ import java.net.URL;
  */
 public class Bio {
 
-    private final Label status;
+    private Label status;
     private Scale scale;
     private Text value;
     public static SystemMonitor custom;
 
     public Bio() {
 
-        Display display = new Display();
+        final Display display = new Display();
         final Shell shell = new Shell(display);
         URL dirURL = getClass().getClassLoader().getResource("images/icon.ico");
-        shell.setImage(new Image(display, dirURL.getPath()));
+        final Image image = new Image(display, dirURL.getPath());
+        shell.setImage(image);
         shell.setText("BioFeedBack study");
         shell.setLayout(new GridLayout(1, false));
+
+        shell.addListener(SWT.Close, new Listener() {
+            @Override
+            public void handleEvent(Event event) {
+                shell.setVisible(false);
+                new addIconPopup(display, shell, image);
+            }
+        });
 
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
