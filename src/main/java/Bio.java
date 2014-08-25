@@ -11,6 +11,9 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.mihalis.opal.angles.AngleSlider;
 import org.mihalis.opal.notify.Notifier;
+import org.mihalis.opal.obutton.DefaultButtonRenderer;
+import org.mihalis.opal.obutton.OButton;
+import org.mihalis.opal.obutton.RedButtonRenderer;
 import org.mihalis.opal.systemMonitor.SystemMonitor;
 import org.mihalis.opal.titledSeparator.TitledSeparator;
 
@@ -37,7 +40,7 @@ public class Bio {
         final Image image = new Image(display, dirURL.getPath());
         shell.setImage(image);
         shell.setText("BioFeedBack study");
-        shell.setLayout(new GridLayout(1, false));
+        shell.setLayout(new GridLayout(2, true));
 
         shell.addListener(SWT.Close, new Listener() {
             @Override
@@ -72,7 +75,7 @@ public class Bio {
         statItem.addListener(SWT.Selection, new Listener() {
             @Override
             public void handleEvent(Event event) {
-                Notifier.notify("New message", "from bobby (bobby@...)<br/><br/>Test message ...");
+                Notifier.notify("Зафиксировано отклонение параметров", "частота сердечных сокращений<br/><br/>выше нормы");
             }
         });
 
@@ -84,6 +87,19 @@ public class Bio {
                 System.exit(0);
             }
         });
+
+        final OButton button1 = new OButton(shell, SWT.PUSH);
+        button1.setText("Normal button");
+        final GridData gd = new GridData(GridData.BEGINNING, GridData.CENTER, false, false);
+        gd.widthHint = 200;
+        button1.setLayoutData(gd);
+        button1.setButtonRenderer(DefaultButtonRenderer.getInstance());
+
+        final OButton button2 = new OButton(shell, SWT.PUSH);
+        button2.setText("Text & image");
+        //button2.setImage(icon);
+        button2.setLayoutData(gd);
+        button2.setButtonRenderer(RedButtonRenderer.getInstance());
 
         final AngleSlider angleSlider = new AngleSlider(shell, SWT.NONE);
         angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
@@ -107,7 +123,7 @@ public class Bio {
         respirationGraph.setCaption("const", "Treshhold value:");
         respirationGraph.setColor("const", new RGB(255, 55, 105));
         respirationGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
-        respirationGraph.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        respirationGraph.setLayoutData(createLayoutData());
 
         heartRythmGraph = new SystemMonitor(shell, SWT.NONE);
 
@@ -123,7 +139,7 @@ public class Bio {
 //        heartRythmGraph.setColor("const", new RGB(255, 10, 5));
 //        heartRythmGraph.setFormatPattern("const", "%{value},.0f / %{maxValue},.0f / %{percentValue}.0f%%");
 
-        heartRythmGraph.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        heartRythmGraph.setLayoutData(createLayoutData());
 
         status = new Label(shell, SWT.BORDER);
         status.setText("Ready");
@@ -135,6 +151,16 @@ public class Bio {
             if (!display.readAndDispatch())
                 display.sleep();
         }
+    }
+
+    /**
+     * @return a layout data
+     */
+    private static GridData createLayoutData() {
+        final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
+        gd.widthHint = 500;
+        gd.heightHint = 400;
+        return gd;
     }
 
 }

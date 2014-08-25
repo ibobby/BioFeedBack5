@@ -40,6 +40,7 @@ public class addIconPopup {
             item.addListener(SWT.Selection, new Listener() {
                 public void handleEvent(Event event) {
                     mainShell.setVisible(true);
+
                     item.dispose();
                 }
             });
