@@ -92,24 +92,25 @@ public class Bio {
 //        angleSlider.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 2, 1));
 
         final OButton button1 = new OButton(shell, SWT.PUSH);
-        button1.setText("Старт");
+        button1.setText("Стоп");
         GridData gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, false, false);
-        gridData.horizontalSpan = 1;
+        gridData.horizontalSpan = 4;
         button1.setLayoutData(gridData);
         button1.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
-        final OButton button2 = new OButton(shell, SWT.PUSH);
-        button2.setText("Выбор");
-        //button2.setImage(image);
-        gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
-        gridData.horizontalSpan = 1;
-        button2.setLayoutData(gridData);
+//        final OButton button2 = new OButton(shell, SWT.PUSH);
+//        button2.setText("Выбор");
+//        //button2.setImage(image);
+//        gridData = new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false);
+//        gridData.horizontalSpan = 4;
+//        button2.setLayoutData(gridData);
         //button2.setButtonRenderer(DefaultButtonRenderer.getInstance());
 
-        final String[] euroZone = new String[]{"ЭКГ", "ЭЭГ"};
-        drawLabel(shell, "Simple Multichoice :");
+        final String[] euroZone = new String[]{"КГР", "ЧСС", "Частота дыхания", "Температура кожи"};
+        drawLabel(shell, "Выбор параметров :");
         final MultiChoice<String> mcSimple = new MultiChoice<String>(shell, SWT.READ_ONLY);
         final GridData gridData1 = new GridData(GridData.FILL, GridData.BEGINNING, true, true);
+        gridData1.horizontalSpan = 3;
         gridData.widthHint = 200;
         mcSimple.setLayoutData(gridData1);
         mcSimple.addAll(euroZone);
@@ -166,10 +167,10 @@ public class Bio {
      */
     private static GridData createLayoutData() {
         final GridData gd = new GridData(GridData.FILL, GridData.FILL, true, true);
-        gd.verticalSpan = 1;
+        gd.verticalSpan = 2;
         gd.horizontalSpan = 2;
-//        gd.widthHint = 250;
-//        gd.heightHint = 400;
+        gd.widthHint = 500;
+        gd.heightHint = 400;
         return gd;
     }
 
